@@ -1,27 +1,48 @@
-import React, { useState } from "react";
-import { FaHome, FaUser, FaProjectDiagram, FaTrophy, FaEnvelope } from "react-icons/fa";
+import React from "react";
+import { Link, useLocation } from "react-router-dom"; 
+import { FaHome, FaUser, FaProjectDiagram, FaTrophy, FaEnvelope, FaCode } from "react-icons/fa"; // Added FaCode for Skills Icon
 import "../styles/Sidebar.css";
 
 const Sidebar = () => {
-  const [active, setActive] = useState("home");
+  const location = useLocation(); 
 
   return (
     <div className="sidebar">
       <ul>
-        <li className={active === "home" ? "active" : ""} onClick={() => setActive("home")}>
-          <FaHome />
+        <li className={location.pathname === "/" ? "active" : ""}>
+          <Link to="/">
+            <FaHome />
+          </Link>
         </li>
-        <li className={active === "about" ? "active" : ""} onClick={() => setActive("about")}>
-          <FaUser />
+
+        <li className={location.pathname === "/about" ? "active" : ""}>
+          <Link to="/about">
+            <FaUser />
+          </Link>
         </li>
-        <li className={active === "projects" ? "active" : ""} onClick={() => setActive("projects")}>
-          <FaProjectDiagram />
+
+        <li className={location.pathname === "/skills" ? "active" : ""}>
+          <Link to="/skills">
+            <FaCode />
+          </Link>
         </li>
-        <li className={active === "achievements" ? "active" : ""} onClick={() => setActive("achievements")}>
-          <FaTrophy />
+
+        <li className={location.pathname === "/projects" ? "active" : ""}>
+          <Link to="/projects">
+            <FaProjectDiagram />
+          </Link>
         </li>
-        <li className={active === "contact" ? "active" : ""} onClick={() => setActive("contact")}>
-          <FaEnvelope />
+
+        <li className={location.pathname === "/achievements" ? "active" : ""}>
+          <Link to="/achievements">
+            <FaTrophy />
+          </Link>
+        </li>
+
+        <li className={location.pathname === "/contact" ? "active" : ""}>
+          <Link to="/contact">
+            <FaEnvelope />
+          </Link>
         </li>
       </ul>
     </div>

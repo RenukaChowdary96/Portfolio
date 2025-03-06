@@ -1,31 +1,199 @@
+/* General Styles */
 .about-container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
-    padding: 50px;
+    align-items: center;
+    height: 100vh;
+    background: #1a1a2e;
+    color: white;
+    padding: 80px 20px;
     text-align: center;
-  }
-  
-  .about-title {
+}
+
+.about-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.about-text {
+    flex: 1;
+    max-width: 500px;
+    text-align: left;
+}
+
+.about-text h2 {
     font-size: 2.5rem;
     font-weight: bold;
-    color: #a855f7; /* Purple shade */
+    color: #a855f7;
     margin-bottom: 20px;
-  }
-  
-  .about-description {
+}
+
+.about-text p {
     font-size: 1.2rem;
     color: #ccc;
-    max-width: 800px;
+    max-width: 600px;
     line-height: 1.6;
-  }
-  
-  .about-image {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    margin-top: 20px;
+}
+
+.about-image {
+    flex: 1;
+    max-width: 250px; /* Adjust to increase size */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-image img {
+    width: 220px; /* Increased size */
+    height: 220px; /* Keeping it equal for circle */
+    object-fit: cover;
+    border-radius: 50%; /* Circular shape */
     border: 4px solid #a855f7;
-  }
-  
+    box-shadow: 0 6px 12px rgba(168, 85, 247, 0.5);
+    transition: transform 0.3s ease-in-out;
+}
+
+.about-image img:hover {
+    transform: scale(1.07);
+}
+
+
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .about-text {
+        text-align: center;
+    }
+    .about-image {
+        margin-top: 20px;
+    }
+}
+
+/* Resume Button */
+.resume-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(135deg, #a855f7, #6b21a8);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(168, 85, 247, 0.4);
+}
+
+.resume-btn:hover {
+    background: linear-gradient(135deg, #6b21a8, #a855f7);
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(168, 85, 247, 0.6);
+}
+.about-text p {
+    font-size: 1.2rem;
+    color: #ccc;
+    max-width: 600px;
+    line-height: 1.6;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease-in-out forwards;
+    animation-delay: 0.5s; /* Delays paragraph animation */
+}
+
+/* Text animation keyframes */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.about-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #0f0f0f;
+    color: #fff;
+}
+
+.about-content {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    max-width: 900px;
+    padding: 20px;
+}
+
+.about-image img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #a855f7;
+    box-shadow: 0 6px 12px rgba(168, 85, 247, 0.5);
+}
+
+.about-text h2 {
+    font-size: 2rem;
+    color: #a855f7;
+}
+
+.intro-text {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+.info-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 8px 12px;
+    border-radius: 8px;
+}
+
+.info-icon {
+    color: #a855f7;
+    font-size: 1.2rem;
+}
+
+.resume-btn {
+    background-color: #a855f7;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.resume-btn:hover {
+    background-color: #7e22ce;
+}
