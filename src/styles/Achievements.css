@@ -1,0 +1,38 @@
+.achievements-container {
+    padding: 50px;
+    text-align: center;
+  }
+  
+  .achievements-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #facc15; /* Gold color */
+    margin-bottom: 20px;
+  }
+  
+  .achievements-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .achievement-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+  }
+  
+  .achievement-card h3 {
+    color: #fff;
+    font-size: 1.5rem;
+  }
+  
+  .achievement-card p {
+    font-size: 1rem;
+    color: #ccc;
+  }
+  

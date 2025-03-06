@@ -1,0 +1,55 @@
+.app {
+    display: flex;
+  }
+  
+  .content {
+    margin-left: 200px;
+    padding: 20px;
+    width: 100%;
+  }
+  :root {
+    --bg-light: #ffffff;
+    --text-light: #000000;
+    --bg-dark: #121212;
+    --text-dark: #ffffff;
+  }
+  
+  body {
+    background: var(--bg-light);
+    color: var(--text-light);
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+  
+  body.dark-mode {
+    background: var(--bg-dark);
+    color: var(--text-dark);
+  }
+  
+  .dark-mode-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--text-light);
+  }
+  
+  body.dark-mode .dark-mode-toggle {
+    color: var(--text-dark);
+  }
+  .content {
+    margin-left: 250px; /* Same as sidebar width */
+    padding: 20px;
+  }
+
+  body {
+    background-color: #121212; /* Dark background */
+    color: white;
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  
