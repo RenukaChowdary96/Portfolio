@@ -1,14 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react"; 
 import { motion } from "framer-motion";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import "../styles/Home.css";
 
 const sentences = [
-  "I am a Bachelor of Computer Applications student",
-  "I am a Full Stack Web Developer",
-  "I am a Python Developer",
-  "I am an Aspiring DevOps Engineer",
-];
+    " a Bachelor of Computer Applications student",
+    " a Full Stack Web Developer",
+    " a Python Developer",
+    " an Aspiring DevOps Engineer",
+  ];
+  
 
 const Home = () => {
   const [index, setIndex] = useState(0);
@@ -46,26 +47,32 @@ const Home = () => {
         {/* Fixed Name */}
         <h1 className="name">I am Renuka Durga Lakshmi</h1>
 
-        {/* Dynamic Typing Effect */}
+        {/* Dynamic Typing Effect with "I am" in White */}
         <motion.h2
-          className="role typing-effect"
+          className="role-container"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
         >
-          {text}
+          <span className="constant-text">I am </span>
+          <span className="animated-role">{text}</span>
           <span className="cursor">|</span>
         </motion.h2>
 
         {/* Social Icons */}
-        <div className="social-icons">
-          <a href="https://github.com/YourGitHubUsername" target="_blank" rel="noopener noreferrer">
-            <FaGithub />
-          </a>
-          <a href="https://linkedin.com/in/YourLinkedInUsername" target="_blank" rel="noopener noreferrer">
-            <FaLinkedin />
-          </a>
-        </div>
+<div className="social-icons">
+  <a href="https://github.com/YourGitHubUsername" target="_blank" rel="noopener noreferrer">
+    <FaGithub />
+  </a>
+  <a href="https://linkedin.com/in/YourLinkedInUsername" target="_blank" rel="noopener noreferrer">
+    <FaLinkedin />
+  </a>
+  <a href="mailto:Renukagaggara@gmail.com" target="_blank" rel="noopener noreferrer">
+    <FaEnvelope />
+  </a>
+</div>
+
+
       </div>
     </div>
   );
