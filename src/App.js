@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Preloader from "./components/Preloder";
 import Sidebar from "./components/Sidebar";
-
 import Home from "./pages/Home";
 import About from "./pages/About";
-import Skills from "./pages/Skills"; // Import Skills Page
+import Skills from "./pages/Skills";
 import Projects from "./pages/Projects";
 import Achievements from "./pages/Achievements";
 import Contact from "./pages/Contact";
@@ -19,25 +17,36 @@ function App() {
   }, []);
 
   return (
-    <Router>
+    <>
       {loading ? (
         <Preloader />
       ) : (
         <div className="app">
           <Sidebar />
           <div className="content">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/skills" element={<Skills />} /> {/* Added Skills Route */}
-              <Route path="/projects" element={<Projects />} />
-              <Route path="/achievements" element={<Achievements />} />
-              <Route path="/contact" element={<Contact />} />
-            </Routes>
+            {/* Each section has an ID for scrolling */}
+            <section id="home">
+              <Home />
+            </section>
+            <section id="about">
+              <About />
+            </section>
+            <section id="skills">
+              <Skills />
+            </section>
+            <section id="projects">
+              <Projects />
+            </section>
+            <section id="achievements">
+              <Achievements />
+            </section>
+            <section id="contact">
+              <Contact />
+            </section>
           </div>
         </div>
       )}
-    </Router>
+    </>
   );
 }
 
