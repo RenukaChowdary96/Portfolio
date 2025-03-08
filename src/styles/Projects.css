@@ -1,58 +1,119 @@
+.projects {
+  text-align: center;
+  padding: 80px 50px; /* Adjusted padding */
+  background: #000; /* Dark Background */
+  color: white;
+  width: 100vw; /* Full width */
+  min-height: 100vh; /* Full height */
+  margin-top: 50px; /* Ensure it starts below Skills */
+  position: relative;
+}
+
+/* Ensure enough space between Projects and Achievements */
+.projects-section {
+  margin-bottom: 100px; /* Adds space below Projects */
+}
+
+/* Arrange Projects in a 2-Column Grid */
 .projects-container {
-    padding: 50px;
-    text-align: center;
-  }
-  
-  .projects-title {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #a855f7; /* Purple shade */
-    margin-bottom: 20px;
-  }
-  
-  .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    justify-content: center;
-  }
-  
-  .project-card {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .project-card:hover {
-    transform: scale(1.05);
-  }
-  
-  .project-card h3 {
-    color: #fff;
-    font-size: 1.5rem;
-  }
-  
-  .project-card p {
-    font-size: 1rem;
-    color: #ccc;
-  }
-  
-  .project-links {
-    margin-top: 15px;
-  }
-  
-  .project-links a {
-    text-decoration: none;
-    color: #38bdf8;
-    font-size: 1rem;
-    margin: 0 10px;
-    transition: color 0.3s ease-in-out;
-  }
-  
-  .project-links a:hover {
-    color: #facc15; /* Gold */
-  }
-  
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  gap: 20px; /* Space between cards */
+  padding-left: 3vw; /* Move everything slightly to the left */
+  justify-items: start; /* Aligns items to the left */
+  position: relative;
+  z-index: 2;
+}
+
+/* Project Card - Smaller Size */
+.project-card {
+  background: #111;
+  padding: 15px; /* Reduce padding */
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+  width: 100%;
+  max-width: 350px; /* Smaller width */
+}
+
+.project-card:hover {
+  transform: scale(1.05);
+}
+
+/* Project Image - Smaller */
+.project-image {
+  width: 100%;
+  height: 140px; /* Reduce image height */
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Project Title and GitHub Link */
+.project-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 8px; /* Reduce padding */
+}
+
+.project-title {
+  font-size: 1.2rem; /* Smaller text */
+  color: #a855f7;
+  cursor: pointer;
+  transition: color 0.3s;
+  text-align: left;
+  flex: 1;
+}
+
+.project-title:hover {
+  color: #9333ea;
+}
+
+/* GitHub Icon */
+.github-icon {
+  font-size: 1.5rem; /* Adjust size */
+  color: gold;
+  transition: color 0.3s;
+  margin-left: 10px; /* Space between title & icon */
+}
+
+.github-icon:hover {
+  color: gold;
+}
+
+/* Project Details (Initially Hidden) */
+.project-details {
+  margin-top: 8px;
+  background: #222;
+  padding: 12px;
+  border-radius: 8px;
+  width: 100%;
+  display: none; /* Initially hidden */
+}
+
+.project-card.active .project-details {
+  display: block; /* Show when active */
+}
+
+/* Project Description */
+.project-description {
+  font-size: 0.9rem; /* Smaller text */
+  color: #ddd;
+}
+
+/* Tech Stack */
+.tech-stack {
+  font-size: 0.8rem; /* Smaller text */
+  color: #bbb;
+}
+
+/* Ensure Achievements Section has Enough Height */
+.achievements-section {
+  min-height: 500px; /* Adjust height as needed */
+  margin-top: 120px; /* Add space to prevent overlap */
+  padding-top: 20px;
+  position: relative;
+  z-index: 1;
+}
