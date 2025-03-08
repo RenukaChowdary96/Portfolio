@@ -1,7 +1,7 @@
 .projects {
   text-align: center;
-  padding: 80px 50px; /* Adjusted padding */
-  background: #000; /* Dark Background */
+  padding: 60px 40px; /* Adjusted padding */
+  background: #000; /* Dark background */
   color: white;
   width: 100vw; /* Full width */
   min-height: 100vh; /* Full height */
@@ -9,18 +9,13 @@
   position: relative;
 }
 
-/* Ensure enough space between Projects and Achievements */
-.projects-section {
-  margin-bottom: 100px; /* Adds space below Projects */
-}
-
-/* Arrange Projects in a 2-Column Grid */
+/* Projects Section */
 .projects-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* 2 columns */
-  gap: 20px; /* Space between cards */
-  padding-left: 3vw; /* Move everything slightly to the left */
-  justify-items: start; /* Aligns items to the left */
+  gap: 15px; /* Space between cards */
+  padding-left: 10vw; /* Moves everything to the left */
+  justify-items: start; /* Align items to the left */
   position: relative;
   z-index: 2;
 }
@@ -28,13 +23,13 @@
 /* Project Card - Smaller Size */
 .project-card {
   background: #111;
-  padding: 15px; /* Reduce padding */
-  border-radius: 10px;
+  padding: 12px; /* Reduced padding */
+  border-radius: 8px;
   text-align: center;
   transition: transform 0.3s ease;
   box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
   width: 100%;
-  max-width: 350px; /* Smaller width */
+  max-width: 270px; /* Decreased size */
 }
 
 .project-card:hover {
@@ -44,22 +39,22 @@
 /* Project Image - Smaller */
 .project-image {
   width: 100%;
-  height: 140px; /* Reduce image height */
+  height: 120px; /* Decreased height */
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 8px;
 }
 
-/* Project Title and GitHub Link */
+/* Project Info */
 .project-info {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding: 8px; /* Reduce padding */
+  padding: 6px; /* Reduced padding */
 }
 
 .project-title {
-  font-size: 1.2rem; /* Smaller text */
+  font-size: 1rem; /* Smaller text */
   color: #a855f7;
   cursor: pointer;
   transition: color 0.3s;
@@ -73,22 +68,22 @@
 
 /* GitHub Icon */
 .github-icon {
-  font-size: 1.5rem; /* Adjust size */
+  font-size: 1.3rem; /* Adjust size */
   color: gold;
   transition: color 0.3s;
-  margin-left: 10px; /* Space between title & icon */
+  margin-left: 8px; /* Space between title & icon */
 }
 
 .github-icon:hover {
   color: gold;
 }
 
-/* Project Details (Initially Hidden) */
+/* Project Details */
 .project-details {
-  margin-top: 8px;
+  margin-top: 6px;
   background: #222;
-  padding: 12px;
-  border-radius: 8px;
+  padding: 10px;
+  border-radius: 6px;
   width: 100%;
   display: none; /* Initially hidden */
 }
@@ -99,21 +94,47 @@
 
 /* Project Description */
 .project-description {
-  font-size: 0.9rem; /* Smaller text */
+  font-size: 0.85rem; /* Smaller text */
   color: #ddd;
 }
 
 /* Tech Stack */
 .tech-stack {
-  font-size: 0.8rem; /* Smaller text */
+  font-size: 0.75rem; /* Smaller text */
   color: #bbb;
 }
 
 /* Ensure Achievements Section has Enough Height */
 .achievements-section {
   min-height: 500px; /* Adjust height as needed */
-  margin-top: 120px; /* Add space to prevent overlap */
+  margin-top: 100px; /* Space to prevent overlap */
   padding-top: 20px;
   position: relative;
   z-index: 1;
+}
+
+/* Skills Section */
+.skills {
+  min-height: 100vh;
+  padding-bottom: 150px; /* Adjusted space */
+}
+/* Tech Stack Icons */
+.tech-stack {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Space between icons */
+  margin-top: 6px;
+}
+
+.tech-stack img {
+  width: 22px; /* Smaller icon size */
+  height: 22px;
+  object-fit: contain;
+  filter: grayscale(50%); /* Slight desaturation for a sleek look */
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.tech-stack img:hover {
+  transform: scale(1.1); /* Slight zoom on hover */
+  filter: grayscale(0%); /* Bring back full color */
 }

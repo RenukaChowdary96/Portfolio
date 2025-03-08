@@ -13,7 +13,6 @@ const Projects = () => {
   return (
     <div className="projects">
       <h1>My Projects</h1>
-      
 
       <div className="projects-container">
         {projectsData.map((project, index) => (
@@ -27,14 +26,21 @@ const Projects = () => {
                 {project.title}
               </h3>
               <a href={project.github} target="_blank" rel="noopener noreferrer">
-                <FaGithub className="github-icon" /> {/* GitHub Icon */}
+                <FaGithub className="github-icon" />
               </a>
             </div>
 
             {activeProject === index && (
               <div className="project-details">
                 <p className="project-description">{project.description}</p>
-                <p className="tech-stack"><strong>Tech Used:</strong> {project.tech}</p>
+                <div className="tech-stack">
+                  <strong>Tech Used:</strong>
+                  <div className="tech-icons">
+                    {project.tech.map((techImg, i) => (
+                      <img key={i} src={techImg} alt="tech-logo" className="tech-icon" />
+                    ))}
+                  </div>
+                </div>
               </div>
             )}
           </div>
