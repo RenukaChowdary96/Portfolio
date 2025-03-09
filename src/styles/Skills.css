@@ -13,11 +13,14 @@
   min-height: 100vh; /* Ensure full height */
 }
 
+
 .skills-content {
   width: 50%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 70px;
+  padding-top: 70px;
 }
 
 h2 {

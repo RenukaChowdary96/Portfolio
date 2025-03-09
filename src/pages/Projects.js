@@ -1,5 +1,5 @@
 import React from "react";
-import { FaGithub } from "react-icons/fa";
+import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import projectsData from "../data/project";
 import "../styles/Projects.css";
 
@@ -13,14 +13,15 @@ const Projects = () => {
           <div key={index} className="project-card">
             <img src={project.image} alt={project.title} className="project-image" />
             <div className="project-info">
-              <h3 className="project-title">
-                <a href={project.detailsPage} target="_blank" rel="noopener noreferrer">
-                  {project.title}
+              <h3 className="project-title">{project.title}</h3>
+              <div className="project-links">
+                <a href={project.github} target="_blank" rel="noopener noreferrer">
+                  <FaGithub className="github-icon" />
                 </a>
-              </h3>
-              <a href={project.github} target="_blank" rel="noopener noreferrer">
-                <FaGithub className="github-icon" />
-              </a>
+                <a href={project.liveLink} target="_blank" rel="noopener noreferrer">
+                  <FaExternalLinkAlt className="live-icon" />
+                </a>
+              </div>
             </div>
           </div>
         ))}

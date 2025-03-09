@@ -1,47 +1,51 @@
 .projects {
   text-align: center;
-  padding: 60px 40px; /* Adjusted padding */
-  background: #000; /* Dark background */
+  padding: 40px 40px;
+  background: #000;
   color: white;
-  width: 100vw; /* Full width */
-  min-height: 100vh; /* Full height */
-  margin-top: 50px; /* Ensure it starts below Skills */
+  width: 100vw;
+  height: 100vh; /* Fixed height to avoid pushing other sections */
+  overflow-y: auto; /* Enables scrolling */
+  margin-top: 50px;
   position: relative;
 }
 
 /* Projects Section */
 .projects-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 columns */
-  gap: 15px; /* Space between cards */
-  padding-left: 10vw; /* Moves everything to the left */
-  justify-items: start; /* Align items to the left */
-  position: relative;
-  z-index: 2;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Responsive grid */
+  gap: 20px;
+  justify-content: center;
+  padding: 0 5vw;
+  max-height: 80vh; /* Ensures content stays within a fixed height */
+  overflow-y: auto; /* Allows scrolling within the container */
 }
 
-/* Project Card - Smaller Size */
+/* Project Card */
 .project-card {
-  background: #111;
-  padding: 12px; /* Reduced padding */
-  border-radius: 8px;
+  background: linear-gradient(135deg, #111, #222);
+  padding: 15px;
+  border-radius: 12px;
   text-align: center;
-  transition: transform 0.3s ease;
-  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
   width: 100%;
-  max-width: 270px; /* Decreased size */
+  max-width: 320px; /* Keeps the size manageable */
+  overflow: hidden;
 }
 
 .project-card:hover {
   transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(255, 255, 255, 0.15);
 }
 
-/* Project Image - Smaller */
+/* Project Image */
 .project-image {
   width: 100%;
-  height: 120px; /* Decreased height */
+  height: 150px; /* Keep images the same size */
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 10px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
 }
 
 /* Project Info */
@@ -50,11 +54,13 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding: 6px; /* Reduced padding */
+  padding-top: 8px;
 }
 
+/* Project Title */
 .project-title {
-  font-size: 1rem; /* Smaller text */
+  font-size: 1rem; /* Keep title size reasonable */
+  font-weight: bold;
   color: #a855f7;
   cursor: pointer;
   transition: color 0.3s;
@@ -63,48 +69,28 @@
 }
 
 .project-title:hover {
-  color: #9333ea;
+  color: #d977f7;
 }
 
-/* GitHub Icon */
+/* Icons */
+.github-icon,
+.live-link-icon {
+  font-size: 1.3rem;
+  transition: color 0.3s, transform 0.3s;
+}
+
 .github-icon {
-  font-size: 1.3rem; /* Adjust size */
   color: gold;
-  transition: color 0.3s;
-  margin-left: 8px; /* Space between title & icon */
 }
 
 .github-icon:hover {
-  color: gold;
+  color: #ffd700;
+  transform: scale(1.1);
 }
 
-/* Project Details */
-.project-details {
-  margin-top: 6px;
-  background: #222;
-  padding: 10px;
-  border-radius: 6px;
-  width: 100%;
-  display: none; /* Initially hidden */
-}
 
-.project-card.active .project-details {
-  display: block; /* Show when active */
-}
 
-/* Project Description */
-.project-description {
-  font-size: 0.85rem; /* Smaller text */
-  color: #ddd;
-}
-
-/* Tech Stack */
-.tech-stack {
-  font-size: 0.75rem; /* Smaller text */
-  color: #bbb;
-}
-
-/* Ensure Achievements Section has Enough Height */
+/* Achievements Section */
 .achievements-section {
   min-height: 500px; /* Adjust height as needed */
   margin-top: 100px; /* Space to prevent overlap */
@@ -118,23 +104,41 @@
   min-height: 100vh;
   padding-bottom: 150px; /* Adjusted space */
 }
-/* Tech Stack Icons */
-.tech-stack {
+/* Icons */
+.github-icon,
+.live-link-icon {
+  font-size: 1.3rem;
+  transition: color 0.3s, transform 0.3s;
+}
+
+/* GitHub Icon */
+.github-icon {
+  color: gold;
+}
+
+.github-icon:hover {
+  color: #ffd700;
+  transform: scale(1.1);
+}
+
+/* Live Link Icon - Now Gold */
+.live-icon {
+  color: gold; /* Changed from teal to gold */
+}
+
+.live-icon:hover {
+  color: #ffd700;
+  transform: scale(1.1);
+}
+
+/* Add Space Between Icons */
+.project-links {
   display: flex;
+  gap: 15px; /* Increased gap between GitHub and Live Link icons */
   align-items: center;
-  gap: 8px; /* Space between icons */
-  margin-top: 6px;
 }
 
-.tech-stack img {
-  width: 22px; /* Smaller icon size */
-  height: 22px;
-  object-fit: contain;
-  filter: grayscale(50%); /* Slight desaturation for a sleek look */
-  transition: transform 0.2s ease, filter 0.2s ease;
-}
 
-.tech-stack img:hover {
-  transform: scale(1.1); /* Slight zoom on hover */
-  filter: grayscale(0%); /* Bring back full color */
+.projects h1 {
+  color: #a855f7;
 }
