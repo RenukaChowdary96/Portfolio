@@ -24,39 +24,33 @@ const Sidebar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const scrollToSection = (id) => {
+    const section = document.getElementById(id);
+    if (section) {
+      window.scrollTo({
+        top: section.offsetTop - 20, // Adjust this offset based on your layout
+        behavior: "smooth",
+      });
+      setActiveSection(id);
+    }
+  };
+
   return (
     <div className="sidebar">
       <ul>
-        <li className={activeSection === "home" ? "active" : ""} 
-            onClick={() => document.getElementById("home").scrollIntoView({ behavior: "smooth" })}>
-          <FaHome />
-          <span className={`sidebar-text ${activeSection === "home" ? "visible" : ""}`}>Home</span>
-        </li>
-        <li className={activeSection === "about" ? "active" : ""} 
-            onClick={() => document.getElementById("about").scrollIntoView({ behavior: "smooth" })}>
-          <FaUser />
-          <span className={`sidebar-text ${activeSection === "about" ? "visible" : ""}`}>About</span>
-        </li>
-        <li className={activeSection === "skills" ? "active" : ""} 
-            onClick={() => document.getElementById("skills").scrollIntoView({ behavior: "smooth" })}>
-          <FaCode />
-          <span className={`sidebar-text ${activeSection === "skills" ? "visible" : ""}`}>Skills</span>
-        </li>
-        <li className={activeSection === "projects" ? "active" : ""} 
-            onClick={() => document.getElementById("projects").scrollIntoView({ behavior: "smooth" })}>
-          <FaProjectDiagram />
-          <span className={`sidebar-text ${activeSection === "projects" ? "visible" : ""}`}>Projects</span>
-        </li>
-        <li className={activeSection === "achievements" ? "active" : ""} 
-            onClick={() => document.getElementById("achievements").scrollIntoView({ behavior: "smooth" })}>
-          <FaTrophy />
-          <span className={`sidebar-text ${activeSection === "achievements" ? "visible" : ""}`}>Achievements</span>
-        </li>
-        <li className={activeSection === "contact" ? "active" : ""} 
-            onClick={() => document.getElementById("contact").scrollIntoView({ behavior: "smooth" })}>
-          <FaEnvelope />
-          <span className={`sidebar-text ${activeSection === "contact" ? "visible" : ""}`}>Contact</span>
-        </li>
+        {[
+          { id: "home", icon: <FaHome />, text: "Home" },
+          { id: "about", icon: <FaUser />, text: "About" },
+          { id: "skills", icon: <FaCode />, text: "Skills" },
+          { id: "projects", icon: <FaProjectDiagram />, text: "Projects" },
+          { id: "achievements", icon: <FaTrophy />, text: "Achievements" },
+          { id: "contact", icon: <FaEnvelope />, text: "Contact" },
+        ].map(({ id, icon, text }) => (
+          <li key={id} className={activeSection === id ? "active" : ""} onClick={() => scrollToSection(id)}>
+            {icon}
+            <span>{text}</span>
+          </li>
+        ))}
       </ul>
     </div>
   );

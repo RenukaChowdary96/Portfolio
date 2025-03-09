@@ -111,3 +111,17 @@
     transform: scale(1.2);
     color: #f59e0b; /* Yellow on hover */
 }
+/* Prevent unwanted horizontal scrolling */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    overflow-x: hidden; /* Stops horizontal movement */
+}
+
+/* Ensure sections don't extend beyond viewport width */
+.home {
+    width: 100vw; /* Ensure full width */
+    max-width: 100%; /* Prevents extra width */
+    overflow-x: hidden; /* Stops any horizontal scroll */
+}
