@@ -28,7 +28,7 @@ const Achievements = () => {
     },
     {
       level: "Department Level",
-      title: "Second Prize - Ideathon",
+      title: "Multiple Awards in Ideathons & Projectexpos",
       award: ideathonAward,
       certificate: ideathonCertificate,
       icon: <FaMedal className="silver-medal" />, // Silver Medal Icon

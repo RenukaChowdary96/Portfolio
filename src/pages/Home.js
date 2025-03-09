@@ -1,15 +1,14 @@
-import React, { useState, useEffect } from "react"; 
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import "../styles/Home.css";
 
 const sentences = [
-    " a Bachelor of Computer Applications student",
-    " a Full Stack Web Developer",
-    " a Python Developer",
-    " an Aspiring DevOps Engineer",
-  ];
-  
+  "a Bachelor of Computer Applications student",
+  "a Full Stack Web Developer",
+  "a Python Developer",
+  "an Aspiring DevOps Engineer",
+];
 
 const Home = () => {
   const [index, setIndex] = useState(0);
@@ -18,25 +17,29 @@ const Home = () => {
   const [isDeleting, setIsDeleting] = useState(false);
 
   useEffect(() => {
-    const typingSpeed = isDeleting ? 50 : 100; // Typing speed
+    const typingSpeed = isDeleting ? 50 : 100;
+    const currentSentence = sentences[index];
 
-    if (!isDeleting && charIndex < sentences[index].length) {
+    if (!isDeleting && charIndex < currentSentence.length) {
       setTimeout(() => {
-        setText((prev) => prev + sentences[index][charIndex]);
-        setCharIndex((prev) => prev + 1);
+        setText(currentSentence.slice(0, charIndex + 1));
+        setCharIndex(charIndex + 1);
       }, typingSpeed);
     } else if (isDeleting && charIndex > 0) {
       setTimeout(() => {
-        setText((prev) => prev.slice(0, -1));
-        setCharIndex((prev) => prev - 1);
+        setText(currentSentence.slice(0, charIndex - 1));
+        setCharIndex(charIndex - 1);
       }, typingSpeed);
     } else {
       setTimeout(() => {
-        setIsDeleting(!isDeleting);
         if (!isDeleting) {
+          setIsDeleting(true);
+        } else {
+          setIsDeleting(false);
           setIndex((prevIndex) => (prevIndex + 1) % sentences.length);
+          setCharIndex(0); // Reset character index properly
         }
-      }, 1000); // Delay before switching sentence
+      }, 1000);
     }
   }, [charIndex, isDeleting, index]);
 
@@ -44,10 +47,8 @@ const Home = () => {
     <div className="home">
       <div className="overlay"></div>
       <div className="content">
-        {/* Fixed Name */}
         <h1 className="name">I am Renuka Durga Lakshmi</h1>
 
-        {/* Dynamic Typing Effect with "I am" in White */}
         <motion.h2
           className="role-container"
           initial={{ opacity: 0 }}
@@ -59,20 +60,17 @@ const Home = () => {
           <span className="cursor">|</span>
         </motion.h2>
 
-        {/* Social Icons */}
-<div className="social-icons">
-  <a href="https://github.com/YourGitHubUsername" target="_blank" rel="noopener noreferrer">
-    <FaGithub />
-  </a>
-  <a href="https://linkedin.com/in/YourLinkedInUsername" target="_blank" rel="noopener noreferrer">
-    <FaLinkedin />
-  </a>
-  <a href="mailto:Renukagaggara@gmail.com" target="_blank" rel="noopener noreferrer">
-    <FaEnvelope />
-  </a>
-</div>
-
-
+        <div className="social-icons">
+          <a href="https://github.com/RenukaChowdary96" target="_blank" rel="noopener noreferrer">
+            <FaGithub />
+          </a>
+          <a href="https://www.linkedin.com/in/renukagaggara/" target="_blank" rel="noopener noreferrer">
+            <FaLinkedin />
+          </a>
+          <a href="mailto:Renukagaggara@gmail.com" target="_blank" rel="noopener noreferrer">
+            <FaEnvelope />
+          </a>
+        </div>
       </div>
     </div>
   );

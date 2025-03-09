@@ -1,27 +1,30 @@
+/* Contact Container */
 .contact-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100vw; /* Ensure full width */
-  min-height: 100vh; /* Ensure full height */
+  width: 100vw;
+  min-height: 100vh;
   background: #000; /* Dark background */
   padding: 50px;
   color: white;
-  text-align: center; /* Center alignment */
+  text-align: center;
 }
 
+/* Heading */
 h2 {
   font-size: 1.8rem;
   color: #a855f7; /* Purple */
   margin-bottom: 20px;
 }
 
+/* Form Styling */
 form {
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 500px; /* Keep form width consistent */
+  max-width: 500px;
 }
 
 label {
@@ -29,7 +32,7 @@ label {
   font-size: 1rem;
   margin-top: 10px;
   font-weight: bold;
-  color: #a855f7; /* Purple */
+  color: #a855f7;
 }
 
 input, textarea {
@@ -50,7 +53,7 @@ textarea {
 
 button {
   margin-top: 20px;
-  background: #a855f7; /* Purple */
+  background: #a855f7;
   color: white;
   border: none;
   padding: 10px;
@@ -61,37 +64,38 @@ button {
 }
 
 button:hover {
-  background: #9333ea; /* Darker Purple */
+  background: #9333ea;
 }
 
-/* Contact Icons Section */
+/* Contact Icons */
 .contact-icons {
   margin-top: 30px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-}
-
-.contact-icons p {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 1rem;
-  margin: 5px 0;
+  gap: 20px;
 }
 
 .contact-icons a {
-  color: #a855f7;
   text-decoration: none;
-  font-weight: bold;
-}
-
-.contact-icons a:hover {
-  text-decoration: underline;
 }
 
 .icon {
-  font-size: 1.2rem;
+  font-size: 2rem;
   color: #a855f7; /* Purple */
+  transition: transform 0.2s;
+}
+
+.icon:hover {
+  transform: scale(1.2);
+}
+
+/* Contact Text (Labels Below Icons) */
+.contact-text {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.contact-text p {
+  margin: 5px 0;
+  font-size: 1rem;
+  color: white;
 }
