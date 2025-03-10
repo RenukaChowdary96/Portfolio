@@ -8,7 +8,7 @@ const projects = [
   {
     title: "Payment App - Paytm",
     image: require("../data/paytm.png"),
-    github: "https://github.com/yourusername/paytm-clone",
+    github: "https://github.com/RenukaChowdary96/payment_app",
     liveLink: "https://paymentappclone.s3.us-east-1.amazonaws.com/paytm_output.mp4",
   },
   
@@ -22,7 +22,7 @@ const projects = [
   {
     title: "Aqualogica - Landing Page",
     image: require("../data/Aqalogica.png"),
-    github: "https://github.com/RenukaChowdary96/Aqalogica_landingpage",
+    github: "https://github.com/RenukaChowdary96/Aqualogica_landingpage",
     liveLink: "https://aqualoica-landing.s3.us-east-1.amazonaws.com/index.html",
   }, 
   {
