@@ -7,11 +7,12 @@
   background: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(10px);
   border-radius: 30px;
-  padding: 40px 15px; /* Increased padding for more spacing */
+  padding: 40px 15px; /* Increased padding for better spacing */
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Distribute space evenly */
-  height: 80vh; /* Make sidebar taller */
+  justify-content: space-between;
+  height: 80vh; /* Keeps it taller */
+  z-index: 1000; /* Ensures it stays on top */
 }
 
 /* Sidebar List */
@@ -21,7 +22,7 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Spread items evenly */
+  justify-content: space-between;
   height: 100%;
 }
 
@@ -65,9 +66,58 @@
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-/* Show Text on Active/Hover */
+/* Show Text on Hover */
 .sidebar li:hover span,
 .sidebar li.active span {
   opacity: 1;
   transform: translateX(0);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .sidebar {
+    left: 10px; /* Move sidebar closer to the edge */
+    height: auto; /* Adjust height */
+    padding: 20px 10px; /* Reduce padding */
+  }
+
+  .sidebar ul {
+    flex-direction: row; /* Horizontal layout */
+    justify-content: center;
+    align-items: center;
+  }
+
+  .sidebar li {
+    width: 40px; /* Reduce size */
+    height: 40px;
+    font-size: 18px;
+    margin: 0 5px; /* Add spacing */
+  }
+
+  .sidebar li span {
+    position: absolute;
+    left: 50%;
+    top: 50px; /* Adjust text position */
+    transform: translateX(-50%);
+    white-space: nowrap;
+  }
+}
+
+/* Smallest Screens */
+@media (max-width: 480px) {
+  .sidebar {
+    left: 5px;
+    padding: 15px;
+  }
+
+  .sidebar li {
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
+  }
+
+  .sidebar li span {
+    font-size: 12px;
+    top: 40px;
+  }
 }
