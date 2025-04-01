@@ -1,74 +1,85 @@
 .app {
-    display: flex;
-  }
-  
+  display: flex;
+  flex-direction: row; /* Default layout */
+}
+
+/* Content Section */
+.content {
+  margin-left: 200px; /* Desktop spacing */
+  padding: 20px;
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Variables for Dark/Light Mode */
+:root {
+  --bg-light: #ffffff;
+  --text-light: #000000;
+  --bg-dark: #121212;
+  --text-dark: #ffffff;
+}
+
+body {
+  background: var(--bg-light);
+  color: var(--text-light);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode {
+  background: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+/* Dark Mode Toggle Button */
+.dark-mode-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--text-light);
+}
+
+body.dark-mode .dark-mode-toggle {
+  color: var(--text-dark);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
   .content {
-    margin-left: 200px;
-    padding: 20px;
-    width: 100%;
+      margin-left: 150px; /* Reduce margin for tablets */
+      padding: 15px;
   }
-  :root {
-    --bg-light: #ffffff;
-    --text-light: #000000;
-    --bg-dark: #121212;
-    --text-dark: #ffffff;
-  }
-  
-  body {
-    background: var(--bg-light);
-    color: var(--text-light);
-    transition: background 0.3s ease, color 0.3s ease;
-  }
-  
-  body.dark-mode {
-    background: var(--bg-dark);
-    color: var(--text-dark);
-  }
-  
-  .dark-mode-toggle {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background: transparent;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-    color: var(--text-light);
-  }
-  
-  body.dark-mode .dark-mode-toggle {
-    color: var(--text-dark);
-  }
-  .content {
-    margin-left: 250px; /* Same as sidebar width */
-    padding: 20px;
+}
+
+@media (max-width: 768px) {
+  .app {
+      flex-direction: column; /* Stack content vertically */
   }
 
-  body {
-    background-color: #121212; /* Dark background */
-    color: white;
-    margin: 0;
-    padding: 0;
-    font-family: "Poppins", sans-serif;
-  }
-  html {
-    scroll-behavior: smooth;
-  }
-  
   .content {
-    width: 100%;
+      margin-left: 0; /* Remove left margin */
+      width: 100%;
+      padding: 10px;
   }
-  
-  section {
-    height: 100vh; /* Each section takes full screen height */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
+
+  .dark-mode-toggle {
+      top: 10px;
+      right: 10px;
+      font-size: 20px; /* Slightly smaller button */
   }
-  
+}
+
+@media (max-width: 480px) {
   .content {
-    margin-left: 15%;  /* Moves content 5% to the left */
-    width: 95%;  /* Increase width to take more screen space */
-    transition: all 0.3s ease-in-out;  /* Smooth transition */
+      padding: 8px;
+  }
+
+  .dark-mode-toggle {
+      top: 5px;
+      right: 5px;
+      font-size: 18px;
+  }
 }

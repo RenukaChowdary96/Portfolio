@@ -1,37 +1,40 @@
+/* Skills Container */
 .skills-container {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column; /* Stack items on small screens */
   height: 100vh;
-  width: 80vw;
+  width: 100vw; /* Ensure full width */
   background: black;
-  padding: 50px;
+  padding: 50px 20px; /* Adjust padding for smaller screens */
   color: white;
   text-align: center;
   box-sizing: border-box;
-  width: 100vw; /* Ensure full width */
-  min-height: 100vh; /* Ensure full height */
+  min-height: 100vh;
 }
 
-
+/* Skills Content */
 .skills-content {
-  width: 50%;
+  width: 80%; /* Adjust width for responsiveness */
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 70px;
-  padding-top: 70px;
+  margin-top: 50px;
+  padding-top: 50px;
 }
 
 h2 {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   font-size: 2rem;
 }
 
+/* Skills List */
 .skills {
   width: 100%;
 }
 
+/* Individual Skill */
 .skill {
   display: flex;
   flex-direction: column;
@@ -47,6 +50,7 @@ h2 {
   margin-bottom: 5px;
 }
 
+/* Progress Bar Container */
 .progress-container {
   display: flex;
   align-items: center;
@@ -54,6 +58,7 @@ h2 {
   width: 100%;
 }
 
+/* Progress Bar */
 .progress {
   flex: 1;
   height: 10px;
@@ -68,9 +73,12 @@ h2 {
   border-radius: 5px;
 }
 
+/* Skill Logos */
 .skill-logos {
   display: flex;
   gap: 10px;
+  flex-wrap: wrap; /* Ensure proper alignment on smaller screens */
+  justify-content: center; /* Center icons on mobile */
 }
 
 .skill-logo {
@@ -78,9 +86,61 @@ h2 {
   height: 40px;
 }
 
+/* Colors for Skills */
 .frontend { background: #f7a541; }
 .database { background: #4db33d; }
 .php { background: #777bb4; }
 .aws { background: #ff9900; }
 .python { background: #3776ab; }
 .git { background: #f34f29; }
+
+/* Mobile Responsiveness */
+
+/* For tablets and screens under 768px */
+@media (max-width: 768px) {
+  .skills-container {
+    padding: 40px 20px; /* Reduce padding */
+  }
+
+  .skills-content {
+    width: 90%; /* Make content full width */
+  }
+
+  h2 {
+    font-size: 1.5rem; /* Reduce heading size */
+  }
+
+  .skill-name {
+    font-size: 1rem; /* Reduce font size */
+  }
+
+  .progress-container {
+    flex-direction: column; /* Stack elements */
+    align-items: center;
+  }
+
+  .progress {
+    width: 80%; /* Make progress bar smaller */
+    margin-top: 10px;
+  }
+}
+
+/* For very small screens under 480px */
+@media (max-width: 480px) {
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  .skill-name {
+    font-size: 0.9rem;
+  }
+
+  .progress {
+    width: 100%;
+  }
+
+  .skill-logo {
+    width: 35px;
+    height: 35px;
+  }
+}
