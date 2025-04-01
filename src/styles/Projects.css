@@ -1,4 +1,4 @@
-/* Projects Section */
+
 .projects {
   text-align: center;
   padding: 40px 40px;
@@ -11,7 +11,7 @@
   position: relative;
 }
 
-/* Projects Container */
+/* Projects Section */
 .projects-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Responsive grid */
@@ -89,6 +89,49 @@
   transform: scale(1.1);
 }
 
+
+
+/* Achievements Section */
+.achievements-section {
+  min-height: 500px; /* Adjust height as needed */
+  margin-top: 100px; /* Space to prevent overlap */
+  padding-top: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Skills Section */
+.skills {
+  min-height: 100vh;
+  padding-bottom: 150px; /* Adjusted space */
+}
+/* Icons */
+.github-icon,
+.live-link-icon {
+  font-size: 1.3rem;
+  transition: color 0.3s, transform 0.3s;
+}
+
+/* GitHub Icon */
+.github-icon {
+  color: gold;
+}
+
+.github-icon:hover {
+  color: #ffd700;
+  transform: scale(1.1);
+}
+
+/* Live Link Icon - Now Gold */
+.live-icon {
+  color: gold; /* Changed from teal to gold */
+}
+
+.live-icon:hover {
+  color: #ffd700;
+  transform: scale(1.1);
+}
+
 /* Add Space Between Icons */
 .project-links {
   display: flex;
@@ -96,77 +139,8 @@
   align-items: center;
 }
 
-/* Heading */
+
 .projects h1 {
   color: #a855f7;
   font-size: 2rem;
-}
-
-/* Mobile Responsiveness */
-
-/* For tablets and small screens under 768px */
-@media (max-width: 768px) {
-  .projects h1 {
-    font-size: 1.5rem; /* Adjust heading size for mobile */
-  }
-
-  /* Adjust the grid layout */
-  .projects-container {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Fewer cards in each row */
-    padding: 0 3vw; /* Add some padding */
-  }
-
-  .project-card {
-    max-width: 100%; /* Ensure the cards fill the container */
-    padding: 12px; /* Reduced padding for small screens */
-  }
-
-  .project-image {
-    height: 130px; /* Adjust image size for mobile */
-  }
-
-  .project-title {
-    font-size: 0.9rem; /* Slightly smaller title on mobile */
-  }
-
-  .github-icon,
-  .live-link-icon {
-    font-size: 1.1rem; /* Reduce icon size for mobile */
-  }
-}
-
-/* For very small screens under 480px */
-@media (max-width: 480px) {
-  .projects h1 {
-    font-size: 1.2rem; /* Further adjust heading size */
-  }
-
-  /* Adjust grid layout for very small screens */
-  .projects-container {
-    grid-template-columns: 1fr; /* Only one project per row */
-    padding: 0 2vw; /* Add smaller padding */
-  }
-
-  .project-card {
-    max-width: 100%; /* Ensure the card fits fully */
-    padding: 10px; /* Further reduce padding */
-  }
-
-  .project-image {
-    height: 120px; /* Further reduce image size */
-  }
-
-  .project-title {
-    font-size: 0.8rem; /* Further reduce font size */
-  }
-
-  .github-icon,
-  .live-link-icon {
-    font-size: 1rem; /* Even smaller icon size */
-  }
-
-  .project-links {
-    flex-direction: column; /* Stack the icons vertically */
-    gap: 10px; /* Reduce gap between icons */
-  }
 }

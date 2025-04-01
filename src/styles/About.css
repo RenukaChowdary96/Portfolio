@@ -9,7 +9,6 @@
     color: white;
     width: 100vw; /* Ensure full width */
     min-height: 100vh; /* Ensure full height */
-    flex-direction: row; /* Default layout for larger screens */
 }
 
 /* Flexbox for content layout */
@@ -84,45 +83,12 @@
 .about-image img:hover {
     transform: scale(1.05);
 }
-
-/* Adjustments for smaller screens */
-@media only screen and (max-width: 768px) {
-    .about-container {
-        flex-direction: column; /* Stack content vertically on small screens */
-        padding: 20px; /* Less padding for small screens */
-    }
-
-    .about-content {
-        flex-direction: column; /* Stack content vertically */
-        gap: 20px; /* Reduce gap */
-    }
-
-    .about-text {
-        text-align: center; /* Center align text for better look on small screens */
-    }
-
-    .about-image img {
-        width: 250px; /* Smaller image on mobile */
-        height: 250px; /* Smaller image on mobile */
-    }
-
-    .resume-btn {
-        width: 100%; /* Full width button on mobile */
-        padding: 15px; /* Larger padding for mobile button */
-    }
-}
-
-/* Adjustments for extra small screens (phones in portrait mode) */
-@media only screen and (max-width: 480px) {
-    .about-title {
-        font-size: 1.5rem; /* Smaller title for small screens */
-    }
-
-    .intro-text {
-        font-size: 1rem; /* Smaller text on mobile */
-    }
-
-    .resume-btn {
-        font-size: 0.9rem; /* Smaller font size for mobile button */
-    }
-}
+.about-image img {
+    width: 320px;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #a855f7;
+    transition: transform 0.3s ease-in-out;
+    margin-right: 185px; /* Moves image slightly right */
+} 

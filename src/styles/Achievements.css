@@ -1,9 +1,11 @@
+
 /* Achievements Section */
 .achievements-section {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  
   background: #000; /* Dark background */
   padding: 50px;
   color: white;
@@ -32,7 +34,6 @@
   display: flex;
   justify-content: center;
   gap: 20px;
-  flex-wrap: wrap; /* Allow wrapping on small screens */
 }
 
 /* Achievement Box */
@@ -130,51 +131,30 @@
   border-radius: 5px;
 }
 
-/* Responsive Adjustments */
-
-/* For tablets and small screens under 768px */
+/* Responsive */
 @media (max-width: 768px) {
   .achievements-row {
-    flex-direction: column; /* Stack boxes vertically */
+    flex-direction: column;
     align-items: center;
   }
-
-  .achievement-box {
-    width: 80%; /* Make boxes take more space */
-    max-width: 350px; /* Limit width on smaller screens */
-    margin-bottom: 20px; /* Add some space between the boxes */
-  }
-
-  .achievements-header {
-    font-size: 1.8rem; /* Slightly smaller header on small screens */
-  }
-
-  .more-info-button {
-    font-size: 14px; /* Smaller font size for button */
-  }
+}
+/* More Info Button */
+.more-info {
+  margin-top: 20px;
 }
 
-/* For very small screens like mobile phones under 480px */
-@media (max-width: 480px) {
-  .achievements-header {
-    font-size: 1.5rem; /* Smaller header text for small screens */
-  }
-
-  .achievement-box {
-    width: 90%; /* Take up almost full width */
-    max-width: 300px; /* Adjust max width */
-  }
-
-  .more-info-button {
-    font-size: 12px; /* Even smaller button text */
-    padding: 8px 15px; /* Adjust padding */
-  }
-
-  .modal-content {
-    width: 90%; /* Modal content becomes more narrow */
-  }
-
-  .modal-image {
-    max-width: 100%; /* Ensure images fit smaller screens */
-  }
+.more-info-button {
+  background: #f5a623;
+  color: black;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: 0.3s;
 }
+
+.more-info-button:hover {
+  background: gold;
+}
+
+

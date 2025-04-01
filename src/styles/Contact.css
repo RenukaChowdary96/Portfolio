@@ -1,3 +1,4 @@
+
 /* Contact Container */
 .contact-container {
   display: flex;
@@ -98,72 +99,4 @@ button:hover {
   margin: 5px 0;
   font-size: 1rem;
   color: white;
-}
-
-/* Mobile Responsiveness */
-
-/* For tablets and small screens under 768px */
-@media (max-width: 768px) {
-  h2 {
-    font-size: 1.5rem; /* Slightly smaller heading */
-  }
-
-  /* Form adjustments */
-  form {
-    max-width: 90%; /* Adjust form width to fit smaller screens */
-  }
-
-  input, textarea {
-    font-size: 0.9rem; /* Slightly smaller font size for inputs */
-  }
-
-  button {
-    font-size: 0.9rem; /* Adjust button text size */
-    padding: 8px 18px; /* Adjust padding */
-  }
-
-  .contact-icons {
-    flex-direction: column; /* Stack icons vertically */
-    gap: 10px; /* Reduced gap between icons */
-  }
-
-  .icon {
-    font-size: 1.8rem; /* Smaller icon size on mobile */
-  }
-
-  .contact-text p {
-    font-size: 0.9rem; /* Adjust text size below icons */
-  }
-}
-
-/* For very small screens under 480px */
-@media (max-width: 480px) {
-  h2 {
-    font-size: 1.2rem; /* Smaller heading for mobile */
-  }
-
-  form {
-    padding: 10px; /* Add some padding to the form for spacing */
-  }
-
-  input, textarea {
-    font-size: 0.85rem; /* Reduce font size further */
-  }
-
-  button {
-    font-size: 0.85rem; /* Smaller button text */
-    padding: 8px 15px; /* Adjust padding */
-  }
-
-  .contact-icons {
-    gap: 8px; /* Reduce gap between icons on very small screens */
-  }
-
-  .icon {
-    font-size: 1.5rem; /* Further reduce icon size */
-  }
-
-  .contact-text p {
-    font-size: 0.8rem; /* Smaller font size for text under icons */
-  }
 }
