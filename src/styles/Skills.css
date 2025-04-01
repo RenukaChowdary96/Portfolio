@@ -1,19 +1,16 @@
-
+/* Skills Section */
 .skills-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  width: 80vw;
   background: black;
-  padding: 50px;
   color: white;
   text-align: center;
+  padding: 50px;
   box-sizing: border-box;
   width: 100vw; /* Ensure full width */
   min-height: 100vh; /* Ensure full height */
 }
-
 
 .skills-content {
   width: 50%;
@@ -24,9 +21,10 @@
   padding-top: 70px;
 }
 
-h2 {
+.skills-content h2 {
   margin-bottom: 30px;
   font-size: 2rem;
+  text-align: center; /* Ensure centered alignment */
 }
 
 .skills {
@@ -71,7 +69,9 @@ h2 {
 
 .skill-logos {
   display: flex;
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
   gap: 10px;
+  justify-content: center; /* Center-align the logos */
 }
 
 .skill-logo {
@@ -79,9 +79,74 @@ h2 {
   height: 40px;
 }
 
+/* Skill Progress Bar Colors */
 .frontend { background: #f7a541; }
 .database { background: #4db33d; }
 .php { background: #777bb4; }
 .aws { background: #ff9900; }
 .python { background: #3776ab; }
 .git { background: #f34f29; }
+
+/* Media Queries for Responsiveness */
+
+/* For tablets and smaller devices (max-width: 768px) */
+@media (max-width: 768px) {
+  .skills-container {
+    flex-direction: column; /* Stack items vertically */
+    padding: 30px;
+    text-align: center; /* Center-align the content */
+  }
+
+  .skills-content {
+    width: 80%; /* Reduce width for smaller screens */
+    margin-top: 50px; /* Adjust margin for spacing */
+    padding-top: 20px;
+  }
+
+  .skills-content h2 {
+    font-size: 1.8rem; /* Slightly reduce heading size */
+  }
+
+  .skill-name {
+    font-size: 1.1rem; /* Adjust font size */
+  }
+
+  .skill-logo {
+    width: 35px; /* Scale down logos */
+    height: 35px;
+  }
+
+  .progress {
+    height: 8px; /* Reduce progress bar height */
+  }
+}
+
+/* For mobile devices (max-width: 480px) */
+@media (max-width: 480px) {
+  .skills-container {
+    padding: 20px;
+  }
+
+  .skills-content {
+    width: 100%; /* Expand content to full width */
+    margin-top: 30px;
+    padding-top: 10px;
+  }
+
+  .skills-content h2 {
+    font-size: 1.5rem; /* Further reduce heading size */
+  }
+
+  .skill-name {
+    font-size: 1rem; /* Smaller text size */
+  }
+
+  .skill-logo {
+    width: 30px; /* Further reduce logo size */
+    height: 30px;
+  }
+
+  .progress {
+    height: 6px; /* Smaller progress bar */
+  }
+}

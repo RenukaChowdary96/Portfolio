@@ -93,35 +93,36 @@
     font-size: 22px;
     color: #a855f7;
 }
-.social-icons {
-    display: flex;
-    gap: 15px; /* Space between icons */
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
+
+/* Responsive Design with Media Queries */
+@media (max-width: 768px) {
+    .home {
+        flex-direction: column;
+        height: auto; /* Adjust height for smaller screens */
+        padding: 20px;
+    }
+    .name {
+        font-size: 2rem; /* Reduce font size for smaller screens */
+    }
+    .role-container {
+        font-size: 1.5rem; /* Adjust font size */
+    }
 }
 
-.social-icons a {
-    font-size: 24px;
-    color: white;
-    transition: transform 0.2s ease-in-out;
+@media (max-width: 480px) {
+    .home {
+        flex-direction: column;
+        height: auto;
+        padding: 15px;
+        background-size: cover;
+    }
+    .name {
+        font-size: 1.8rem; /* Further reduce font size */
+    }
+    .role-container {
+        font-size: 1.2rem; /* Smaller font size */
+    }
+    .social-icons a {
+        font-size: 20px; /* Adjust icon size */
+    }
 }
-
-.social-icons a:hover {
-    transform: scale(1.2);
-    color: #f59e0b; /* Yellow on hover */
-}
-/* Prevent unwanted horizontal scrolling */
-html, body {
-    margin: 0;
-    padding: 0;
-    width: 100vw;
-    overflow-x: hidden; /* Stops horizontal movement */
-}
-
-/* Ensure sections don't extend beyond viewport width */
-.home {
-    width: 100vw; /* Ensure full width */
-    max-width: 100%; /* Prevents extra width */
-    overflow-x: hidden; /* Stops any horizontal scroll */
-} 

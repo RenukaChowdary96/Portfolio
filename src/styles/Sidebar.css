@@ -1,5 +1,4 @@
-
-/* Sidebar Container */ 
+/* Sidebar Container */
 .sidebar {
   position: fixed;
   left: 20px;
@@ -8,11 +7,14 @@
   background: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(10px);
   border-radius: 30px;
-  padding: 40px 15px; /* Increased padding for more spacing */
+  padding: 40px 15px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Distribute space evenly */
-  height: 80vh; /* Make sidebar taller */
+  justify-content: space-between;
+  height: 80vh;
+  width: 70px; /* Set a fixed width */
+  z-index: 1000; /* Ensure the sidebar is above other elements */
+  transition: all 0.3s ease;
 }
 
 /* Sidebar List */
@@ -22,7 +24,7 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Spread items evenly */
+  justify-content: space-between;
   height: 100%;
 }
 
@@ -53,7 +55,7 @@
 /* Sidebar Text (Initially Hidden) */
 .sidebar li span {
   position: absolute;
-  left: 60px;
+  left: 80px; /* Adjusted for responsive space */
   background: white;
   color: black;
   padding: 5px 10px;
@@ -71,4 +73,48 @@
 .sidebar li.active span {
   opacity: 1;
   transform: translateX(0);
+}
+
+/* Responsive Design */
+
+/* For tablets and smaller devices (max-width: 768px) */
+@media (max-width: 768px) {
+  .sidebar {
+    left: 10px; /* Adjust positioning */
+    height: 70vh; /* Slightly shorter height */
+    width: 60px; /* Narrower sidebar width */
+    padding: 30px 10px; /* Adjust padding */
+  }
+
+  .sidebar li {
+    width: 45px; /* Smaller item size */
+    height: 45px;
+    font-size: 20px; /* Adjust font size */
+  }
+
+  .sidebar li span {
+    left: 70px; /* Adjust label position */
+    font-size: 12px; /* Smaller label font */
+  }
+}
+
+/* For mobile devices (max-width: 480px) */
+@media (max-width: 480px) {
+  .sidebar {
+    left: 5px; /* Further adjust positioning */
+    height: 60vh; /* Even shorter height */
+    width: 50px; /* Narrower sidebar width */
+    padding: 20px 5px; /* Adjust padding */
+  }
+
+  .sidebar li {
+    width: 40px; /* Smaller item size */
+    height: 40px;
+    font-size: 18px; /* Adjust font size */
+  }
+
+  .sidebar li span {
+    left: 60px; /* Adjust label position */
+    font-size: 10px; /* Compact label font */
+  }
 }

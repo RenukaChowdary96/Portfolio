@@ -1,52 +1,42 @@
-/* About Me Section */
 .about-container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background: #000; /* Dark background */
-    padding: 50px;
+    min-height: 100vh; /* Matches the height of other pages */
+    background: #000;
     color: white;
-    width: 100vw; /* Ensure full width */
-    min-height: 100vh; /* Ensure full height */
-}
-
-/* Flexbox for content layout */
-.about-content {
+    padding: 40px; /* Add padding for better spacing */
+    box-sizing: border-box;
+    margin-top: -280px
+  }
+  
+  .about-content {
     display: flex;
+    justify-content: space-between; /* Separate text and image */
     align-items: center;
-    justify-content: space-between;
-    max-width: 1100px;
-    width: 100%;
-    gap: 30px; /* Reduce gap for better alignment */
-}
-
-/* Left Section - Text */
-.about-text {
-    flex: 1;
-    max-width: 600px;
-    text-align: justify; /* Ensures text aligns properly */
-}
-
-/* Animated Title */
-.about-title {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #a855f7; /* Purple */
-    margin-bottom: 10px;
-    text-align: center;
-}
-
-/* Paragraph */
-.intro-text {
+    width: 90%; /* Maintain proper width */
+    max-width: 1200px; /* Prevent stretching */
+    margin: 0 auto; /* Centers the content */
+    gap: 40px; /* Add spacing between text and image */
+    margin-right: 20%;
+  }
+  
+  .about-text {
+    flex: 3; /* Allocate more space to text */
+    text-align: left;
+  }
+  
+  .intro-text {
     font-size: 1.2rem;
     line-height: 1.8;
     color: #ddd;
-    text-align: justify;
-}
-
-/* Resume Button */
-.resume-btn {
+    margin-bottom: 20px;
+  }
+  
+  .resume-btn {
+    display: inline-block;
+    margin-top: 20px; /* Adds space between text and button */
     background: #a855f7;
     color: white;
     padding: 12px 24px;
@@ -55,40 +45,240 @@
     border-radius: 8px;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
-    margin-top: 20px;
-}
-
-.resume-btn:hover {
+  }
+  
+  .resume-btn:hover {
     background: #9333ea;
     transform: scale(1.05);
-}
-
-/* Right Section - Profile Image */
-.about-image {
+  }
+  
+  .about-image {
+    flex: -1; /* Allocate smaller space to the image */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .about-image img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #a855f7; /* Purple border */
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .about-image img:hover {
+    transform: scale(1.05); /* Slight zoom effect */
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .about-content {
+      flex-direction: column; /* Stack text and image vertically */
+      align-items: center;
+    }
+  
+    .about-text {
+      text-align: center;
+    }
+  
+    .about-image {
+      margin-top: 20px; /* Add space between text and image */
+    }
+  
+    .about-image img {
+      width: 150px;
+      height: 150px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .intro-text {
+      font-size: 1rem;
+    }
+  
+    .resume-btn {
+      font-size: 0.9rem;
+      padding: 10px 20px;
+    }
+  
+    .about-image img {
+      width: 120px;
+      height: 120px;
+    }
+  }
+  /* About Me Section */
+.about-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #000;
+    color: white;
+    padding: 40px;
+    box-sizing: border-box;
+    margin-top: -280px;
+  }
+  
+  /* About Title - Add new color and animation */
+  .about-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #ff5733; /* Changed color to orange */
+    margin-bottom: 30px;
+    animation: fadeIn 1.5s ease; /* Apply fade-in animation */
+  }
+  
+  /* Animation for heading text */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px); /* Start slightly above */
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0); /* Settle back to normal */
+    }
+  }
+  
+  /* Content Animations */
+  .about-text {
+    flex: 3;
+    text-align: left;
+    animation: slideIn 1.5s ease; /* Slide animation for the text */
+  }
+  
+  @keyframes slideIn {
+    0% {
+      opacity: 0;
+      transform: translateX(-50px); /* Start from the left */
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0); /* Slide to original position */
+    }
+  }
+  
+  /* Resume Button Animation */
+  .resume-btn {
+    display: inline-block;
+    margin-top: 20px;
+    background: #a855f7;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    animation: popIn 1.5s ease; /* Button pop-in effect */
+  }
+  
+  @keyframes popIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.8); /* Shrink slightly */
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1); /* Normal size */
+    }
+  }
+  
+  .resume-btn:hover {
+    background: #9333ea;
+    transform: scale(1.05);
+  }
+  
+  /* Image Animation */
+  .about-image {
     flex: 1;
     display: flex;
-    justify-content: center; /* Center align image */
+    justify-content: center;
     align-items: center;
-}
-
-.about-image img {
-    width: 320px;
-    height: 320px;
+    animation: floatIn 1.5s ease; /* Floating animation */
+  }
+  
+  @keyframes floatIn {
+    0% {
+      opacity: 0;
+      transform: translateX(50px); /* Start from the right */
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0); /* Settle back to normal */
+    }
+  }
+  
+  .about-image img {
+    width: 200px;
+    height: 200px;
     object-fit: cover;
     border-radius: 50%;
     border: 5px solid #a855f7;
     transition: transform 0.3s ease-in-out;
-}
-
-.about-image img:hover {
-    transform: scale(1.05);
-}
-.about-image img {
-    width: 320px;
-    height: 320px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 5px solid #a855f7;
-    transition: transform 0.3s ease-in-out;
-    margin-right: 185px; /* Moves image slightly right */
-} 
+  }
+  
+  .about-image img:hover {
+    transform: scale(1.05); /* Zoom effect */
+  }
+  .about-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #a855f7; /* Purple color for the theme */
+    margin-bottom: 30px;
+    animation: textMove 3s infinite; /* Add continuous moving animation */
+  }
+  
+  /* Moving Animation for Heading */
+  @keyframes textMove {
+    0% {
+      transform: translateX(0); /* Start in its original position */
+    }
+    25% {
+      transform: translateX(10px); /* Slight move to the right */
+    }
+    50% {
+      transform: translateX(0); /* Back to center */
+    }
+    75% {
+      transform: translateX(-10px); /* Slight move to the left */
+    }
+    100% {
+      transform: translateX(0); /* Reset position */
+    }
+  }
+    /* About Content Text */
+.about-text {
+    flex: 3;
+    text-align: left;
+    animation: contentMove 3s infinite; /* Moving animation for content text */
+  }
+  
+  @keyframes contentMove {
+    0% {
+      transform: translateY(0); /* Start in its original position */
+    }
+    25% {
+      transform: translateY(-10px); /* Slight move upwards */
+    }
+    50% {
+      transform: translateY(0); /* Back to original position */
+    }
+    75% {
+      transform: translateY(10px); /* Slight move downwards */
+    }
+    100% {
+      transform: translateY(0); /* Reset position */
+    }
+  }
+  
+  .intro-text {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #ddd;
+    margin-bottom: 20px;
+  }
+  
